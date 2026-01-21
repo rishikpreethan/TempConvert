@@ -2,32 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.6">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TempConvert</title>
     <link rel="stylesheet" href="design.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="main">
-        <label style="font-size: 40px; color: black; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Temperature Conversion</label>
-        <br>
-        <input type="text" id="input">
-        <br>
+        <h1 class="title">Temperature Conversion</h1>
+        <input type="text" id="input" placeholder="Enter temperature">
+        
         <div class="option">
-            <input id= "cf" type="radio" name="1">
-            <label class="toconvert">Celsius to Fahrenheit</label>
+            <input id="cf" type="radio" name="conversion">
+            <label for="cf" class="toconvert">Celsius to Fahrenheit</label>
         </div>
 
         <div class="option">
-            <input id = "fc" type="radio" name="1">
-            <label class="toconvert">Fahrenheit to Celsius</label>
+            <input id="fc" type="radio" name="conversion">
+            <label for="fc" class="toconvert">Fahrenheit to Celsius</label>
         </div>
-        <br>
+        
         <button id="submit">Submit</button>
-        <label id="ans" style="font-size:30px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;;">Select a unit<label>
-        <br>
+        <label id="ans">Select a unit</label>
     </div>
     <script src="index.js"></script>
 </body>

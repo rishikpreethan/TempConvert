@@ -1,50 +1,107 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 body {
-    margin: 0px;
-    height: 100vh;
-    display: flex;
+    min-height: 100vh;
+    display:flex;
     justify-content: center;
     align-items: center;
-    background-color: darkgrey;
+    background-color: #a9a9a9;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding: 20px;
 }
 
 #main {
-    width: 300px;
-    height: 450px;
-    padding: 30px;
+    width: 90%;
+    max-width: 400px;
+    min-height: 450px;
+    padding: clamp(20px, 5vw, 40px);
     background-color: grey;
     display: flex;
     flex-direction: column;
-    border: solid;
-    border-radius: 15px;
     align-items: center;   /* horizontal centering */
     justify-content: center; /* vertical centering */
-    gap: 10px;  /* space between items */
+    gap: clamp(10px, 2vh, 20px);  /* space between items */
     text-align: center;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    border-radius: 15px; /* optional but looks better */
+    border: 3px solid black;
+    border-radius: 15px;
 }
 
-#submit {
-    background-color: red;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: white;
-    padding: 15px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 16px;
-}
-.toconvert{
-    font-size: 25px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    
+.title {
+    font-size: clamp(24px, 5vw, 40px);
+    color: black;
+    margin-bottom:10px;
 }
 #input{
-    height: 30px;
+    height: clamp(40px,8vh,60px);
     width: 160px;
-    border: solid;
+    max-width: 100%;
+    border: 2px solid black;
     border-radius:10px;
-    font-size: 30px;
+    font-size: clamp(18px, 4vh, 28px);
     text-align: center;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     padding: 10px;
+}
+.option{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.option input[type = "radio"]{
+    width: clamp(16px, 3vw, 20px);
+    height: clamp(16px, 3vw, 20px);
+    cursor: pointer;
+}
+
+.toconvert {
+    font-size: clamp(16px, 3.5vw, 25px);
+    cursor: pointer;
+}
+#submit {
+    background-color: red;
+    color: white;
+    padding: clamp(12px, 2.5vh, 18px) clamp(20px, 4vw, 30px);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: clamp(14px, 3vw, 18px);
+    font-weight: bold;
+    transition: background-color 0.3s
+}
+#submit:hover{
+    background-color: darkred;
+}
+
+#ans{
+    font-size: clamp(18px, 4vw, 30px);
+    margin-top: 10px; 
+}
+
+@media (max-width: 480px){
+    #main{
+        width: 95%;
+        gap: 12px;
+    }
+
+    .option {
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 768px){
+    #main{
+        width: 480px;
+    }
+}
+
+@media (max-height: 600px){
+    #main{
+        min-height: auto;
+        padding: 15px;
+        gap: 8px;
+    }
 }
